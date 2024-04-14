@@ -1,22 +1,26 @@
+// Receipt.js
+
 import React, { Component } from 'react';
 import { productList } from '../Products';
 import Shop from './Shop';
+import '../Style.css';
+
 class Receipt extends Component {
-   
-    render() { 
-        const productsList = productList.map((product) => (
-            <Shop product={product} />
-        ));
-        const totalBillPrice = productList.reduce((acc, product) => acc + product.price * product.quantity, 0);
+  render() {
+    const productsList = productList.map((product, index) => (
+      <Shop key={index} product={product} />
+    ));
+    const total = productList.reduce(
+      (acc, product) => acc + product.price * product.quantity,0
+    );
 
-
-        return (
-            <div>
-			<h1 >Сумма чека: {totalBillPrice} грн.</h1>
-			<div >{productsList}</div>
-		</div>
-        );
-    }
+    return (
+      <div className="receipt-container">
+        <h1 className="receipt-title">Сумма чека: {total} грн.</h1>
+        <div>{productsList}</div>
+      </div>
+    );
+  }
 }
 
 export default Receipt;
