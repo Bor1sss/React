@@ -1,3 +1,69 @@
 .bold{
     font-weight: 1000;
 }
+.italic{
+    font-style: italic;
+}
+
+.tt{
+    text-transform: uppercase;
+}
+.under{
+    text-decoration: underline;
+}
+
+:root {
+    --bg-color-light: #ffffff;
+    --text-color-light: #000000;
+    --bg-color-dark: #333333;
+    --text-color-dark: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+    --bg-color-light: #333333;
+    --text-color-light: #ffffff;
+    --bg-color-dark: #ffffff;
+    --text-color-dark: #000000;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid var(--text-color-light);
+    color: var(--text-color-light);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--text-color-light);
+    color: var(--bg-color-light);
+}
+
+main {
+    padding: 20px;
+}
+
+#content {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
