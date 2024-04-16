@@ -1,0 +1,31 @@
+.bigWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.Photo {
+    margin-right: 20px;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: auto;
+}
+
+.slider-container div {
+    display: flex;
+    align-items: center;
+}
+
+.slider-container input {
+    margin-right: 10px;
+}
