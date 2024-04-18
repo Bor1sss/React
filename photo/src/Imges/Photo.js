@@ -14,12 +14,35 @@ class Photo extends Component {
             saturate:100,
             sepia:0,
             photo: null,
-  
+            Gallery:[],
   
       }
+      
     }
 
-
+    addHandle = () => {
+        const { photo, blur, brightness, contrast, grayscale, hue_rotate, invert, opacity, saturate, sepia } = this.state;
+        if (photo) {
+            const newPhoto = {
+                blur,
+                brightness,
+                contrast,
+                grayscale,
+                hue_rotate,
+                invert,
+                opacity,
+                saturate,
+                sepia,
+                photo
+            };
+            this.setState(prevState => ({
+                Gallery: [...prevState.Gallery, newPhoto]
+            }), () => {
+                console.log(this.state.Gallery);
+            });
+        }
+    }
+    
     
     handleChange = e => {
 
@@ -112,9 +135,39 @@ class Photo extends Component {
                     <input name='sepia' type='range' onChange={this.handleChange} min="0" max="100" value={this.state.sepia}></input>
                     <span>sepia {this.state.sepia}</span>
                     </div>
+                        <button onClick={this.addHandle}>ADD</button>
                     </div>
                     </div>
+
+
+                 
+
                 </div>
+
+
+                <div className="gallery">
+                {this.state.Gallery.map((item, index) => (
+                    <img
+                    key={index}
+                    src={URL.createObjectURL(item.photo)}
+                    alt={`Image ${index}`}
+                    style={{
+                        filter: `
+                        blur(${item.blur}px)
+                        brightness(${item.brightness}%)
+                        contrast(${item.contrast}%)
+                        grayscale(${item.grayscale}%)
+                        hue-rotate(${item.hue_rotate}deg)
+                        invert(${item.invert}%)
+                        opacity(${item.opacity}%)
+                        saturate(${item.saturate}%)
+                        sepia(${item.sepia}%)
+                        `
+                    }}
+                    />
+                ))}
+</div>
+
             </div>
         );
     }
