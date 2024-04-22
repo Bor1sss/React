@@ -15,13 +15,12 @@ function Product() {
 		return <div>Product not found</div>
 	}
 
-	const { title, color } = product
+	const { title, price } = product
 
 	return (
 		<>
-			<div style={{ backgroundColor: color }}>
-				<h2>{title}</h2>
-			</div>
+			<h2>{title}</h2>
+			<p>Price: {price}</p>
 		</>
 	)
 }

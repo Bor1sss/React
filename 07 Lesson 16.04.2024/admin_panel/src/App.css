@@ -1,0 +1,77 @@
+.body{
+  font: 16px/1.5 Verdana;
+  background: #f2f2f4;
+}
+.container{
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.item{
+  background: #fff;
+  padding: 24px;
+}
+
+/* admin.component.css */
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.wrap {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: calc(100% - 10px);
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.product-list .product-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

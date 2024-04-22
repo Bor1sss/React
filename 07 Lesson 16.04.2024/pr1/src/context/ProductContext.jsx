@@ -5,32 +5,26 @@ const ProductContext = createContext()
 export const ProductProvider = ({ children }) => {
 	const [products, setProducts] = useState([
 		{
-			title: 'Сумка',
-			price: 600,
+			title: 'BlackBox',
+			color: "Black",
 			id: 0,
 		},
 		{
-			title: 'Барсетка',
-			price: 800,
+			title: 'BlueBox',
+			color: "Blue",
 			id: 1,
 		},
 		{
-			title: 'Саквояж',
-			price: 1800,
+			title: 'GreenBox',
+			color: "Green",
 			id: 2,
 		},
 	])
 
-	const addProduct = (newProduct) => {
-		setProducts([...products, newProduct])
-		// setProducts(products.push(newProduct)) не получится
-	}
-	const deleteProduct = (productId) => {
-		setProducts(products.filter(product => product.id !== productId));
-	}
+
 
 	return (
-		<ProductContext.Provider value={{products, addProduct, deleteProduct}}>
+		<ProductContext.Provider value={{products}}>
 			{children}
 		</ProductContext.Provider>
 	)

@@ -1,13 +1,10 @@
 import React from 'react'
 import {RouterProvider,createBrowserRouter} from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-
+import User from './pages/Register'
 import Layout from './layout/Layout'
 import './App.css'
-import Product from './components/Product'
 import { ProductProvider } from './context/ProductContext'
-
+import Admin from './pages/Admin'
 
 function App() {
   const router = createBrowserRouter([
@@ -20,19 +17,15 @@ function App() {
 			),
 			children: [
 				{
-					path: '/',
-					element: <Home />,
+					path: 'Admin',
+					element: <Admin />,
 				},
 				{
-					path: '/About',
-					element: <About />,
-				},
-				{
-					path: '/product/:id',
-					element: <Product />,
-				},
+					path: 'User',
+					element: <User/>
+				}
 			],
-		}
+		},
 	])
   return (
     <>

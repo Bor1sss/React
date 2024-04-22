@@ -9,10 +9,10 @@ function Layout() {
 					<nav>
 						<ul className='menu'>
 							<li>
-								<Link to='/'>Home</Link>
+								<Link to='/Admin'>Admin</Link>
 							</li>
 							<li>
-								<Link to='/About'>About</Link>
+								<Link to='/User'>User</Link>
 							</li>
 						</ul>
 					</nav>
